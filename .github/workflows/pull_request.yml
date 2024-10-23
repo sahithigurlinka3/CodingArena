@@ -1,0 +1,26 @@
+name: Ask Questions on Pull Request
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  ask-questions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on Pull Request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const questions = [
+              "What is the purpose of this change?",
+              "Are there any related issues?",
+              "What are the testing steps?"
+            ];
+            const commentBody = questions.map(q => - ${q}).join('\n');
+
+            await github.issues.createComment({
+              ...context.repo,
+              issue_number: context.payload.pull_request.number,
+              body: ### Please answer the following questions:\n${commentBody}
+            });
