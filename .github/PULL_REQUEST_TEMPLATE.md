@@ -1,22 +1,34 @@
+# Pull Request Review Checklist
+
 ## What type of PR is this? (check all applicable)
 
 - [ ] Refactor
-- [ ] Feature
+- [ ] New Feature
 - [ ] Bug Fix
 - [ ] Optimization
 - [ ] Documentation Update
 
-## Description
-
-Package upgrades to fix security alerts.
-
 ## Added/updated tests?
 
 - [ ] Yes
-- [ ] No, and this is why: not needed
+- [ ] No
 - [ ] I need help with writing tests
 
 ## New version release required?
 
-- [ ] Yes, changeset is added
+- [ ] Yes
 - [ ] No
+
+## Does the PR introduce any performance improvements?
+
+-[ ] Yes
+-[ ] No
+
+## Are there any deployment considerations?
+
+-[ ] Yes
+-[ ] No
+
+## Additional Comments 
+
+- Any other notes or concerns:
